@@ -1,1 +1,28 @@
 <h1>New User</h1>
+<!-- 
+<h2>HTML Form</h2>
+<form action='/users' method='post' accept-charset='UTF-8'>
+  Username: <input type="text" name='user[username]'><br />
+  Email: <input type="text" name='user[email]'><br />
+  Password: <input type='Password' name='user[password]'><br />
+  <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+  <input type="submit" value="Submit">
+</form>
+
+
+<h2>Railsy Forms with #form_tag</h2>
+
+<%= form_tag ('/users'), method: :post do %>
+  Username: <%= text_field_tag 'username' %><br />
+  Email: <%= text_field_tag 'email' %><br />
+  Password: <%= password_field_tag 'password' %><br />
+  <%= submit_tag 'Submit' %>
+<% end %>
+ -->
+<h2>Railsy Forms with #form_tag</h2>
+<%= form_for @user do |f| %>
+  Username: <%= f.text_field :username %><br />
+  Email:    <%= f.text_field :email %><br />
+  Password: <%= f.password_field :password %><br />
+  <%= f.submit %>
+<% end %>
